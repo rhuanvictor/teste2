@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.custom-navbar {
+    max-width: none !important; /* Remove o limite */
+    width: 100%; /* Garante que ocupe toda a largura */
+  }
+
+  .custom-container {
+    display: flex;
+    gap: 1rem; /* Default gap */
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  @media (min-width: 640px) {
+    .custom-container {
+      gap: 2rem;
+    }
+  }
+  @media (min-width: 340px) {
+    .custom-container {
+      display:none;
+    }
+  }
+  @media (min-width: 768px) {
+    .custom-container {
+      gap: 1.3rem;
+      font-size: 3px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .custom-container {
+      gap: 2.0rem;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    .custom-container {
+      gap: 3.5rem;
+    }
+  }
+  
+  
+  .theme-switch {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -15px; /* Desloca o ícone alguns centímetros para a direita */
+    margin-top: -10px; /* Sobe o ícone alguns centímetros */
+  }
+  
+  .hover-effect {
+    position: relative;
+  }
+  
+  .hover-effect::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(90deg, #e5e1e0, #3e3224);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .hover-effect:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  :root {
+    --background-gradient-light: linear-gradient(
+      to right, /* Direção do gradiente */
+      #f7f7ed 5%, /* primeira cor */
+      #f7f7ed 35%, /* segunda cor */
+      
+      #f7f7ed 70%, /* quarta cor */
+      #f7f7ed/* quinta cor */
+    
+    
+  );
+
+    --text-color-light: #000000; /* Cor do texto para o tema light */
+    --background-color-dark: #080610; /* Cor de fundo para o tema dark */
+    --text-color-dark: #ffffff; /* Cor do texto para o tema dark */
+}
+
+.light body {
+    background: var(--background-gradient-light); /* Usando background para gradiente */
+    color: var(--text-color-light);
+}
+
+ 
+
+  
+  .dark body {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /*.cards-container {
+  display: flex;
+  gap: 16px;  Espaço entre os cartões 
+}*/
+
+.hidden-svg {
+  opacity: 0;
+  transform: translateY(40px); /* Movimento um pouco maior */
+  transition: opacity 1.2s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  visibility: hidden;
+}
+
+.visible-svg {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}

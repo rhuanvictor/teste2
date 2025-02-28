@@ -1,0 +1,12 @@
+@media (max-width: 320px) {
+    .hide-cadastre-se {
+      display: none !important;
+    }
+  }
+  
+  @media (max-width: 220px) {
+    .hide-login {
+      display: none !important;
+    }
+  }
+  
